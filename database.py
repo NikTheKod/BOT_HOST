@@ -37,7 +37,7 @@ def init_db():
             location TEXT,
             price REAL,
             specs TEXT,
-            status TEXT DEFAULT 'available',  # available, sold
+            status TEXT DEFAULT 'available',
             image_url TEXT
         )
     """)
@@ -62,7 +62,7 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id INTEGER,
             message TEXT,
-            status TEXT DEFAULT 'open',  # open, closed
+            status TEXT DEFAULT 'open',
             created_at TEXT,
             admin_answer TEXT
         )
@@ -159,8 +159,6 @@ def add_purchase(user_id, server_id):
     
     conn.commit()
     conn.close()
-
-# --- Функции для поддержки ---
 
 def add_support_ticket(user_id, message):
     """Создать обращение в поддержку"""
